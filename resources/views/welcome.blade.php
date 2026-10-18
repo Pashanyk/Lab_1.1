@@ -8,21 +8,15 @@
 
     </section>
 
-    <hr>
-
     <section>
         <h2>Чому обирають нас:</h2>
 
     </section>
 
-    <hr>
-
     <section>
         <h2>Популярні пропозиції:</h2>
 
     </section>
-
-    <hr>
 
 
 @endsection

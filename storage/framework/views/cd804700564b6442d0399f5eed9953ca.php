@@ -38,7 +38,7 @@
             font-size: 14px;
         }
 
-        }
+
     </style>
 </head>
 <body>
@@ -48,6 +48,7 @@
     <nav>
         <a href="<?php echo e(url('/')); ?>">Головна</a>
         <a href="<?php echo e(url('/menu')); ?>">Меню кухні</a>
+        <a href="<?php echo e(route('site.booking')); ?>">Бронювання</a>
         <a href="<?php echo e(url('/about')); ?>">Про нас</a>
         <a href="<?php echo e(url('/contact')); ?>">Контакти</a>
     </nav>
