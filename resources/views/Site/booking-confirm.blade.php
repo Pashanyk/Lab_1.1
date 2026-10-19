@@ -6,10 +6,14 @@
     <h1>Дякуємо! Вашу заявку прийнято</h1>
     <p>Менеджер ресторану зв'яжеться з вами для підтвердження бронювання столика.</p>
 
+    <hr>
+
     <h3>Деталі заявки:</h3>
     <ul>
         <li><strong>Ім'я:</strong> {{ $name }}</li>
         <li><strong>Email:</strong> {{ $email }}</li>
+        <li><strong>Номер телефону:</strong> {{ $phone }}</li>
+        <li><strong>Дата бронювання:</strong> {{ $date }}</li>
         <li><strong>Повідомлення:</strong> {{ $message }}</li>
     </ul>
 
