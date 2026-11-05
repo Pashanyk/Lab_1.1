@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Enums\DishCategory;
+use App\Enums\DishCategoryEnum;
 use Illuminate\Validation\Rules\Enum;
 
 class DishRequest extends FormRequest
@@ -19,7 +19,7 @@ class DishRequest extends FormRequest
             'name' => ['required', 'string', 'max:100'],
             'description' => ['nullable', 'string'],
             'price' => ['required', 'numeric', 'min:0'],
-            'category' => ['required', new Enum(DishCategory::class)],
+            'category' => ['required', new Enum(DishCategoryEnum::class)],
         ];
     }
 }

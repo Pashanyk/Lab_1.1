@@ -11,8 +11,9 @@
     <label for="category">Категорія:</label><br>
     <select id="category" name="category" required>
         <option value="">-- Оберіть категорію --</option>
-        @foreach(\App\Enums\DishCategory::cases() as $cat)
-            <option value="{{ $cat->value }}" {{ old('category', $dish->category ?? '') == $cat->value ? 'selected' : '' }}>
+        @foreach(\App\Enums\DishCategoryEnum::cases() as $cat)
+            <option
+                value="{{ $cat->value }}" {{ old('category', $dish->category ?? '') == $cat->value ? 'selected' : '' }}>
                 {{ $cat->value }}
             </option>
         @endforeach
@@ -24,7 +25,8 @@
 
 <div>
     <label for="price">Ціна (грн):</label><br>
-    <input type="number" step="0.01" id="price" name="price" value="{{ old('price', $dish->price ?? '') }}" min="0" required>
+    <input type="number" step="0.01" id="price" name="price" value="{{ old('price', $dish->price ?? '') }}" min="0"
+           required>
     @error('price')
     <div style="color: red;">{{ $message }}</div>
     @enderror
