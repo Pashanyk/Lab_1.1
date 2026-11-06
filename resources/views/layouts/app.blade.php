@@ -47,7 +47,7 @@
 
     <nav>
         <a href="{{ url('/') }}">Головна</a>
-        <a href="{{ url('/menu') }}">Меню кухні</a>
+        <a href="{{ route('dish.index') }}">Меню</a>
         <a href="{{ route('site.booking') }}">Бронювання</a>
         <a href="{{ url('/about') }}">Про нас</a>
         <a href="{{ url('/contact') }}">Контакти</a>
