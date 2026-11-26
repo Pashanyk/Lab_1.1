@@ -10,10 +10,12 @@ class DishController extends Controller
 {
     public function index()
     {
-        $dishes = Dish::query()->orderBy('category')->paginate(5);
+        $dishes = Dish::with('translations')
+            ->orderBy('category')
+            ->paginate(5);
+
         return view('dish.index', compact('dishes'));
     }
-
 
     public function create()
     {

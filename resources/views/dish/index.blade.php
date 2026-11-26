@@ -4,7 +4,11 @@
 
 @section('content')
     <h1>Меню ресторану</h1>
-
+    <div style="margin-bottom: 16px;">
+        Мова / Language:
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'uk']) }}">Українська (UK)</a> |
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'en']) }}">English (EN)</a>
+    </div>
     @if(session('success'))
         <div style="color: green; margin-bottom: 15px;">
             {{ session('success') }}
@@ -19,7 +23,9 @@
         <thead>
         <tr>
             <th>#</th>
+            <th>Фото</th>
             <th>Назва</th>
+            <th>Опис</th>
             <th>Категорія</th>
             <th>Ціна</th>
             <th>Дії</th>
@@ -30,11 +36,19 @@
             <tr>
                 <td>{{ $dishes->firstItem() + $i }}</td>
                 <td>
+                    <img
+                        src="{{ asset($dish->image ?? 'images/blog-placeholder.jpg') }}"
+                        alt="{{ $dish->localized_name }}"
+                        style="width: 80px; height: 60px; object-fit: cover; border-radius: 6px;"
+                    >
+                </td>
+                <td>
                     <a href="{{ route('dish.show', $dish) }}">
-                        {{ $dish->name }}
+                        {{ $dish->localized_name }}
                     </a>
                 </td>
-                <td>{{ $dish->category }}</td>
+                <td>{{ $dish->localized_description }}</td>
+                <td>{{ $dish->localized_category ?? $dish->category }}</td>
                 <td>{{ number_format($dish->price, 2, '.', ' ') }} грн</td>
                 <td>
                     <a href="{{ route('dish.edit', $dish) }}">Редагувати</a>

@@ -5,12 +5,14 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
-
+{
     public function up(): void
     {
-        Schema::table('tracker', function (Blueprint $table) {
-            $table->string('method', 10)->default('GET')->after('ip');
-        });
+        if (!Schema::hasColumn('tracker', 'method')) {
+            Schema::table('tracker', function (Blueprint $table) {
+                $table->string('method', 10)->default('GET')->after('ip');
+            });
+        }
     }
 
     public function down(): void
@@ -19,3 +21,4 @@ return new class extends Migration
             $table->dropColumn('method');
         });
     }
+};
