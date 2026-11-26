@@ -51,6 +51,7 @@
         <a href="{{ route('site.booking') }}">Бронювання</a>
         <a href="{{ url('/about') }}">Про нас</a>
         <a href="{{ url('/contact') }}">Контакти</a>
+        <a href="{{ route('stats.pages') }}">Статистика</a>
     </nav>
 </header>
 
